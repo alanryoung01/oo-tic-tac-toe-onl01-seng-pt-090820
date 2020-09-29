@@ -40,6 +40,19 @@ def valid_move?(index)
   elsif !position_taken?(index)
 end
 
+def turn
+  puts "Choose a number 1-9"
+  user_input = gets.chomp
+  index = input_to_index(user_input)
+  if valid_move?(index)
+    player_token = current_player
+    move(index, player_token)
+    display_board
+  else
+    turn
+  end
+end
+
 
 end
 end
